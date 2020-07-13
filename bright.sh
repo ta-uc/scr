@@ -9,5 +9,6 @@ then
     newb=`expr $cb - 85`
     echo $newb | sudo tee /sys/class/backlight/intel_backlight/brightness
 fi
-notify-send -t 100 $(($newb *100/7585))
-#cat /sys/class/backlight/intel_backlight/brightness
+
+notify-send -t 100 $(seq -s▪ $(( ($newb*30/7585)+1 )) |tr -d '[:digit:]')$(seq -s_ $(( 30-($newb*30/7585) )) |tr -d '[:digit:]')
+
