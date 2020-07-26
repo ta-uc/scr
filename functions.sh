@@ -1,5 +1,4 @@
-#functions
-ex() {
+function ex() {
     local c e i
 
     (($#)) || return
@@ -34,7 +33,15 @@ ex() {
     return "$e"
 }
 
-ipif() { 
+function tenki() {
+ command curl wttr.in/$1
+}
+
+function ma() {
+ command curl cheat.sh/$1
+}
+
+function ipif() { 
     if grep -P "(([1-9]\d{0,2})\.){3}(?2)" <<< "$1"; then
   curl ipinfo.io/"$1"
     else
