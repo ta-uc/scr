@@ -2,7 +2,7 @@
 
 export PATH=/usr/bin
 
-USER_NAME=$(who | awk -v vt=tty$(fgconsole) '$0 ~ vt {print $1}')
+USER_NAME=$(who | awk -v vt=tty '$0 ~ vt {print $1}')
 USER_ID=$(id -u "$USER_NAME")
 CARD_PATH="/sys/class/drm/card0/"
 AUDIO_OUTPUT="analog-surround-40"
