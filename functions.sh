@@ -34,7 +34,7 @@ function ex() {
 }
 
 function tenki() {
- command curl wttr.in/$1
+ command curl wttr.in/$1 | less -SR
 }
 
 function ma() {
